@@ -1,6 +1,5 @@
 ModulosInternos/__pycache__
 token.json
 *.xlsx
-*.pdf
 SalidaIMG/*.png
 .DS_Store
