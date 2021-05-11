@@ -133,7 +133,7 @@ def graficas(nameExcel,nombreHoja):
     fig = g2.get_figure()
     fig.savefig('SalidaIMG/grafica2.png')
     ###Grafica Caja Bigotes
-    g3 = Datos.plot.box()
+    g3 = Datos.plot.box(title="Grafica C-B")
     fig = g3.get_figure()
     fig.savefig('SalidaIMG/grafica3.png')
     ###Grafica Circular 1 = Proyecto
@@ -154,7 +154,8 @@ def graficas(nameExcel,nombreHoja):
     fig.savefig('SalidaIMG/grafica7.png')        
     
 
-graficas("4to_Resumen.xlsx", "Resumen")
+graficas("5to_Resumen.xlsx", "Resumen")
+tabla.pruebas()
 def generar_resumen(Clave):
     users = cursos.get_users_by_idCourse(listaGrados[Clave])
     c = resumen_Actividades(1,2021, listaGrados[Clave])

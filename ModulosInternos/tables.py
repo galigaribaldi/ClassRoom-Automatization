@@ -63,12 +63,25 @@ def generar_tabla(data, name):
     pdf.build(elems)
 
 def pruebas():
-    import os
+    #Importamos los modulos necesarios
     from reportlab.pdfgen import canvas
-    c=canvas.Canvas("test.pdf")
-    #drawImage(archivo, x, y, width=None, height=None)
-    c.drawImage("../SalidaIMG/grafica.png", 0, A4[1]/2, width=400, height=400)
-    c.showPage()
-    c.save()
-    os.system("test.pdf")
-#pruebas()
+    doc = canvas.Canvas("SalidaIMG/ReporteCalif.pdf")
+    #Inseratmos la imagen en el documento
+    ###Primera Hoja
+    doc.drawImage("SalidaIMG/Tabla.png", 15, 350,600,500)##(nombre,posicionx,posiciony, ancho, alto)
+    doc.drawImage("SalidaIMG/grafica3.png", -20, 50,320,380)##(nombre,posicionx,posiciony, ancho, alto)
+    doc.drawImage("SalidaIMG/grafica2.png", 290, 70,320,350)##(nombre,posicionx,posiciony, ancho, alto)
+    ####
+    doc.showPage()
+    #### Segunda Hoja
+    doc.drawImage("SalidaIMG/grafica4.png", -50, 450,390,290)##(nombre,posicionx,posiciony, ancho, alto)
+    doc.drawImage("SalidaIMG/grafica5.png", 260, 450,390,290)##(nombre,posicionx,posiciony, ancho, alto)
+    doc.drawImage("SalidaIMG/grafica6.png", -50, 70,390,290)##(nombre,posicionx,posiciony, ancho, alto)
+    doc.drawImage("SalidaIMG/grafica7.png", 260, 70,390,290)##(nombre,posicionx,posiciony, ancho, alto)
+    #### 
+    doc.showPage()
+    #### Tercera Hoja
+    doc.drawImage("SalidaIMG/grafica1.png", -15, 100,600,600)##(nombre,posicionx,posiciony, ancho, alto)
+    #doc.drawImage("../SalidaIMG/grafica3.png", 0, 450,300,300)##(nombre,posicionx,posiciony, ancho, alto)
+    #Guardamos el documento
+    doc.save()
