@@ -61,3 +61,14 @@ def generar_tabla(data, name):
     elems.append(table)
 
     pdf.build(elems)
+
+def pruebas():
+    import os
+    from reportlab.pdfgen import canvas
+    c=canvas.Canvas("test.pdf")
+    #drawImage(archivo, x, y, width=None, height=None)
+    c.drawImage("../SalidaIMG/grafica.png", 0, A4[1]/2, width=400, height=400)
+    c.showPage()
+    c.save()
+    os.system("test.pdf")
+#pruebas()
